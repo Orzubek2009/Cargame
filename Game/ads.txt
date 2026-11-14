@@ -1,0 +1,3 @@
+# Replace 0000000000000000 with the digits of your AdSense publisher id (the part after "ca-pub-"),
+# then upload this file to the ROOT of your domain so it opens at https://yourdomain.com/ads.txt
+google.com, pub-0000000000000000, DIRECT, f08c47fec0942fa0
