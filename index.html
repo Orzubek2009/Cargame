@@ -1735,7 +1735,7 @@ body #homeRoot .hdisc:focus-visible { outline: 2px solid var(--pink); outline-of
       <section>
         <h4>CREDITS</h4>
         <ul class="sc">
-          <li><b>Traffic vehicles</b>The cars, vans, trucks and buses on the road are by Mason (ModelzRipper) on Sketchfab, licensed CC BY-NC 4.0: <a href="https://sketchfab.com/3d-models/traffic-racer-npc-vehicles-pack-8825234a326d4c219fe79af52608d62d" target="_blank" rel="noopener">Traffic Racer NPC Vehicles Pack</a> and <a href="https://sketchfab.com/3d-models/traffic-rider-npc-vehicles-61f8508a366d41e3b3a40c4b54f7a03a" target="_blank" rel="noopener">Traffic Rider NPC Vehicles</a>. Resized, merged into one file and given lamp lights for this game. The garage cars are credited under each car.</li>
+          <li><b>Traffic vehicles</b>The cars, vans, trucks and buses on the road are by Mason (ModelzRipper) on Sketchfab, licensed CC BY-NC 4.0: <a href="https://sketchfab.com/3d-Game/models/traffic-racer-npc-vehicles-pack-8825234a326d4c219fe79af52608d62d" target="_blank" rel="noopener">Traffic Racer NPC Vehicles Pack</a> and <a href="https://sketchfab.com/3d-Game/models/traffic-rider-npc-vehicles-61f8508a366d41e3b3a40c4b54f7a03a" target="_blank" rel="noopener">Traffic Rider NPC Vehicles</a>. Resized, merged into one file and given lamp lights for this game. The garage cars are credited under each car.</li>
         </ul>
       </section>
     </div>
@@ -2845,7 +2845,7 @@ return C;
 /* ---- vehicles.js ---- */
 /* The garage is thirty-one real cars (scanned 3D models), three of them police cars (flag `police`), and three more police versions of road cars are added below. Every car has its own engine,
    gearbox, weight, tyres and handling. Pure data and one helper that writes a vehicle into the physics spec; runs in node too. The highway traffic is not here: it is the vehicle pack in
-   models/npc.glb.txt (traffic.js). */
+   Game/models/npc.glb.txt (traffic.js). */
 (function (root, factory) {
   if (typeof module === 'object' && module.exports) module.exports = factory(require('./physics.js'));
   else root.Vehicles = factory(root.DriftPhysics);
@@ -2875,14 +2875,14 @@ function outline(x0, x1, hw) {
   return { colX: xs, colR: +r.toFixed(3) };
 }
 
-/* The first thirty-one are real cars, scanned 3D models loaded from models/<id>.glb.txt (the .glb as base64 text: the page host only serves text, image, font and media files; see realcar.js); they are the player's garage and never appear as
+/* The first thirty-one are real cars, scanned 3D models loaded from Game/models/<id>.glb.txt (the .glb as base64 text: the page host only serves text, image, font and media files; see realcar.js); they are the player's garage and never appear as
    traffic. Dimensions and cameras are in the physics frame
    (x forward from the centre of gravity, metres). Figures are the makers' published ones, except these estimates: the Tesla Roadster's power and weight (unpublished),
    the Roush Mustang's and the AMG GT4's weight, 0-100 time and top speed, the 1967 Camaro's 0-100 time and top speed, the 1967 Shelby GT500's weight, 0-100 time, top speed
    and gear ratios, the Super Snake's weight, 0-100 time and top speed, the Zonda Revolución's 0-100 time, top speed and gear ratios, the Model 3 Performance's power (unpublished),
    and the gear ratios, drag and 0-100 time of a few of the others (the Civic Type R, GT-R, M5, M3 Touring, M2, Raptor and TRX). */
 const LIST = [
-  { id: 'e92', real: { glb: 'models/e92.glb.txt', credit: { by: 'Ddiaz Design', lic: 'CC BY-NC-SA 4.0', licUrl: 'https://creativecommons.org/licenses/by-nc-sa/4.0/', url: 'https://sketchfab.com/3d-models/2010-bmw-m3-e92-14f97cec80fe4ecd9bd48f3b47bceaad' } },
+  { id: 'e92', real: { glb: 'Game/models/e92.glb.txt', credit: { by: 'Ddiaz Design', lic: 'CC BY-NC-SA 4.0', licUrl: 'https://creativecommons.org/licenses/by-nc-sa/4.0/', url: 'https://sketchfab.com/3d-Game/models/2010-bmw-m3-e92-14f97cec80fe4ecd9bd48f3b47bceaad' } },
     stats: { z100: 4.8, top: 250 }, name: 'BMW M3', cls: 'E92 coupe · 2010', drive: 'rwd', blurb: 'Naturally aspirated 4.0 litre V8 that screams to 8,400 rpm. Rear-wheel drive with a locking M differential: a proper drift weapon.',
     dims: { x0: -2.456, x1: 2.159, hw: 0.91, h: 1.404 }, paint: 0xc4101f,
     traffic: { w: 0, v: [110, 140], acc: 3 },
@@ -2894,7 +2894,7 @@ const LIST = [
       steerLock: 0.6, maxSteer: 0.7, steerInRate: 5.2,
       upBase: 6800, upThr: 1500, dnBase: 3300, dnThr: 3200, shiftUpTime: 0.12, shiftDnTime: 0.08, vmax: 252,
       tire: { mu: [1.1, 1.1, 1.3, 1.3], Fz0: 4200, launch: 1.18 } } },
-  { id: 'm4', real: { glb: 'models/m4.glb.txt', credit: { by: 'Ddiaz Design', lic: 'CC BY-NC-SA 4.0', licUrl: 'https://creativecommons.org/licenses/by-nc-sa/4.0/', url: 'https://sketchfab.com/3d-models/2025-bmw-m4-competition-f8141ecd755547989c9209784b71ad43' } },
+  { id: 'm4', real: { glb: 'Game/models/m4.glb.txt', credit: { by: 'Ddiaz Design', lic: 'CC BY-NC-SA 4.0', licUrl: 'https://creativecommons.org/licenses/by-nc-sa/4.0/', url: 'https://sketchfab.com/3d-Game/models/2025-bmw-m4-competition-f8141ecd755547989c9209784b71ad43' } },
     stats: { z100: 3.8, top: 250 }, name: 'BMW M4', cls: 'Competition coupe · 2025', drive: 'rwd', blurb: 'Twin-turbo straight-six with 503 hp and an eight-speed auto, all of it through the rear wheels. Fast, wide and very happy sideways.',
     dims: { x0: -2.531, x1: 2.263, hw: 0.944, h: 1.399 }, paint: 0x15335e,
     traffic: { w: 0, v: [110, 140], acc: 3 },
@@ -2906,7 +2906,7 @@ const LIST = [
       steerLock: 0.58, maxSteer: 0.68, steerInRate: 5.2,
       upBase: 5600, upThr: 1400, dnBase: 2600, dnThr: 2800, shiftUpTime: 0.09, shiftDnTime: 0.07, vmax: 252,
       tire: { mu: [1.14, 1.14, 1.32, 1.32], Fz0: 4500, launch: 1.4 } } },
-  { id: 'elantra', real: { glb: 'models/elantra.glb.txt', credit: { by: 'lucillehowefrl', lic: 'CC BY 4.0', licUrl: 'https://creativecommons.org/licenses/by/4.0/', url: 'https://sketchfab.com/3d-models/2025-hyundai-elantra-fe9882284c6b43ffbf671d6a28022b33' } },
+  { id: 'elantra', real: { glb: 'Game/models/elantra.glb.txt', credit: { by: 'lucillehowefrl', lic: 'CC BY 4.0', licUrl: 'https://creativecommons.org/licenses/by/4.0/', url: 'https://sketchfab.com/3d-Game/models/2025-hyundai-elantra-fe9882284c6b43ffbf671d6a28022b33' } },
     stats: { z100: 5.3, top: 250 }, name: 'Elantra N', cls: 'Hyundai sedan · 2025', drive: 'fwd', blurb: 'Turbo four with 276 hp, a quick dual-clutch box and a limited-slip front axle. The family sedan that plays dirty.',
     dims: { x0: -2.708, x1: 2.012, hw: 0.91, h: 1.419 }, paint: 0xeceeef,
     traffic: { w: 0, v: [100, 130], acc: 2.4 },
@@ -2918,7 +2918,7 @@ const LIST = [
       steerLock: 0.62, maxSteer: 0.7, steerInRate: 5.2,
       upBase: 5300, upThr: 1200, dnBase: 2300, dnThr: 2400, shiftUpTime: 0.1, shiftDnTime: 0.07, vmax: 250,
       tire: { mu: [1.24, 1.24, 1.12, 1.12], Fz0: 3800, launch: 1.6 } } },
-  { id: 'x5', real: { glb: 'models/x5.glb.txt', credit: { by: 'Ddiaz Design', lic: 'CC BY-NC-SA 4.0', licUrl: 'https://creativecommons.org/licenses/by-nc-sa/4.0/', url: 'https://sketchfab.com/3d-models/2019-bmw-x5-xdrive30d-850fb32f984c4630969840fc61f44902' } },
+  { id: 'x5', real: { glb: 'Game/models/x5.glb.txt', credit: { by: 'Ddiaz Design', lic: 'CC BY-NC-SA 4.0', licUrl: 'https://creativecommons.org/licenses/by-nc-sa/4.0/', url: 'https://sketchfab.com/3d-Game/models/2019-bmw-x5-xdrive30d-850fb32f984c4630969840fc61f44902' } },
     stats: { z100: 6.5, top: 230 }, name: 'BMW X5', cls: 'xDrive30d SUV · 2019', drive: 'awd', blurb: 'Big diesel straight-six with a wall of torque and rear-biased all-wheel drive. Heavy and tall, but it still hangs its tail out.',
     dims: { x0: -2.558, x1: 2.364, hw: 1.0, h: 1.778 }, paint: 0x6e7378,
     traffic: { w: 0, v: [100, 126], acc: 2 },
@@ -2930,7 +2930,7 @@ const LIST = [
       steerLock: 0.58, maxSteer: 0.64, steerInRate: 4, steerRateRaw: 3.2, driftRear: 0.15, driftKick: 0.3,
       upBase: 3500, upThr: 1100, dnBase: 1500, dnThr: 1900, shiftUpTime: 0.14, shiftDnTime: 0.1, vmax: 232,
       tire: { mu: [0.99, 0.99, 1.01, 1.01], Fz0: 5300, launch: 1.6 } } },
-  { id: 'urus', real: { glb: 'models/urus.glb.txt', credit: { by: 'Ddiaz Design', lic: 'CC BY-NC-SA 4.0', licUrl: 'https://creativecommons.org/licenses/by-nc-sa/4.0/', url: 'https://sketchfab.com/3d-models/2019-lamborghini-urus-9ef2fd625ba54ea39226ea5d043c0e13' } },
+  { id: 'urus', real: { glb: 'Game/models/urus.glb.txt', credit: { by: 'Ddiaz Design', lic: 'CC BY-NC-SA 4.0', licUrl: 'https://creativecommons.org/licenses/by-nc-sa/4.0/', url: 'https://sketchfab.com/3d-Game/models/2019-lamborghini-urus-9ef2fd625ba54ea39226ea5d043c0e13' } },
     stats: { z100: 3.6, top: 305 }, name: 'Urus', cls: 'Lamborghini super SUV · 2019', drive: 'awd', blurb: 'Twin-turbo V8, 641 hp and all-wheel drive with a rear bias. Two and a quarter tonnes that launch like a supercar.',
     dims: { x0: -2.57, x1: 2.54, hw: 1.01, h: 1.671 }, paint: 0xf1b200,
     traffic: { w: 0, v: [110, 140], acc: 3 },
@@ -2942,7 +2942,7 @@ const LIST = [
       steerLock: 0.56, maxSteer: 0.64, steerInRate: 4.2, steerRateRaw: 3.3, driftRear: 0.15, driftKick: 0.3,
       upBase: 5400, upThr: 1100, dnBase: 2400, dnThr: 2600, shiftUpTime: 0.1, shiftDnTime: 0.08, vmax: 306,
       tire: { mu: [1.1, 1.1, 1.18, 1.18], Fz0: 5700, launch: 1.6 } } },
-  { id: 'prius', real: { glb: 'models/prius.glb.txt', credit: { by: 'Doz3', lic: 'CC BY 4.0', licUrl: 'https://creativecommons.org/licenses/by/4.0/', url: 'https://sketchfab.com/3d-models/toyota-prius-2012-04eaf6b288cc466785365b7d985e3b29' } },
+  { id: 'prius', real: { glb: 'Game/models/prius.glb.txt', credit: { by: 'Doz3', lic: 'CC BY 4.0', licUrl: 'https://creativecommons.org/licenses/by/4.0/', url: 'https://sketchfab.com/3d-Game/models/toyota-prius-2012-04eaf6b288cc466785365b7d985e3b29' } },
     stats: { z100: 10.4, top: 180 }, name: 'Toyota Prius', cls: 'Hybrid hatchback · 2012', drive: 'fwd', blurb: 'Petrol-electric hybrid with 134 hp from both power sources, front-wheel drive and a smooth, slippery body. Slow, light on its feet and surprisingly easy to slide.',
     dims: { x0: -2.389, x1: 2.065, hw: 0.907, h: 1.488 }, paint: 0xe4eaec,
     traffic: { w: 0, v: [110, 140], acc: 3 },
@@ -2954,7 +2954,7 @@ const LIST = [
       steerLock: 0.6, maxSteer: 0.7, steerInRate: 5.2,
       upBase: 4200, upThr: 900, dnBase: 1900, dnThr: 2000, shiftUpTime: 0.2, shiftDnTime: 0.14, vmax: 182,
       tire: { mu: [1.02, 1.02, 0.98, 0.98], Fz0: 3400 } } },
-  { id: 'malibu', real: { glb: 'models/malibu.glb.txt', credit: { by: 'Ddiaz Design', lic: 'CC BY 4.0', licUrl: 'https://creativecommons.org/licenses/by/4.0/', url: 'https://sketchfab.com/3d-models/2016-chevrolet-malibu-20-t-premier-fc07e847ec6c4dbaa02d53e1110a6dd7' } },
+  { id: 'malibu', real: { glb: 'Game/models/malibu.glb.txt', credit: { by: 'Ddiaz Design', lic: 'CC BY 4.0', licUrl: 'https://creativecommons.org/licenses/by/4.0/', url: 'https://sketchfab.com/3d-Game/models/2016-chevrolet-malibu-20-t-premier-fc07e847ec6c4dbaa02d53e1110a6dd7' } },
     stats: { z100: 6.3, top: 240 }, name: 'Chevrolet Malibu', cls: '2.0T Premier sedan · 2016', drive: 'fwd', blurb: 'Turbocharged 2.0 litre with 250 hp and an eight-speed automatic, driving the front wheels. A big, comfortable family sedan with a surprising turn of pace.',
     dims: { x0: -2.767, x1: 2.102, hw: 1.032, h: 1.436 }, paint: 0xf1f2f2,
     traffic: { w: 0, v: [110, 140], acc: 3 },
@@ -2966,7 +2966,7 @@ const LIST = [
       steerLock: 0.6, maxSteer: 0.7, steerInRate: 5.2,
       upBase: 5100, upThr: 1100, dnBase: 2300, dnThr: 2400, shiftUpTime: 0.16, shiftDnTime: 0.1, vmax: 242,
       tire: { mu: [1.1, 1.1, 1.02, 1.02], Fz0: 3800, launch: 1.36 } } },
-  { id: 'camaro', real: { glb: 'models/camaro.glb.txt', credit: { by: 'Ddiaz Design', lic: 'CC BY-NC-SA 4.0', licUrl: 'https://creativecommons.org/licenses/by-nc-sa/4.0/', url: 'https://sketchfab.com/3d-models/1967-chevrolet-camaro-ss-350-coupe-37ecedd9b5284cbfae74956eea2ad3fd' } },
+  { id: 'camaro', real: { glb: 'Game/models/camaro.glb.txt', credit: { by: 'Ddiaz Design', lic: 'CC BY-NC-SA 4.0', licUrl: 'https://creativecommons.org/licenses/by-nc-sa/4.0/', url: 'https://sketchfab.com/3d-Game/models/1967-chevrolet-camaro-ss-350-coupe-37ecedd9b5284cbfae74956eea2ad3fd' } },
     stats: { z100: 7.4, top: 190 }, name: 'Camaro SS 350', cls: 'Chevrolet muscle car · 1967', drive: 'rwd', blurb: 'Small-block 350 V8 with 295 hp, a four-speed manual and rear-wheel drive. Old-school tyres, soft handling and a tail that comes round very easily.',
     dims: { x0: -2.518, x1: 2.157, hw: 0.909, h: 1.28 }, paint: 0x1d62c8,
     traffic: { w: 0, v: [110, 140], acc: 3 },
@@ -2978,7 +2978,7 @@ const LIST = [
       steerLock: 0.56, maxSteer: 0.66, steerInRate: 5.2,
       upBase: 4500, upThr: 1000, dnBase: 2000, dnThr: 2100, shiftUpTime: 0.22, shiftDnTime: 0.15, vmax: 192,
       tire: { mu: [0.9, 0.9, 0.96, 0.96], Fz0: 3600 } } },
-  { id: 'mustang', real: { glb: 'models/mustang.glb.txt', credit: { by: 'monsefzz', lic: 'CC BY 4.0', licUrl: 'https://creativecommons.org/licenses/by/4.0/', url: 'https://sketchfab.com/3d-models/ford-mustang-roush-2019-stage-3-c3be292e50774be98bac9de749579d80' } },
+  { id: 'mustang', real: { glb: 'Game/models/mustang.glb.txt', credit: { by: 'monsefzz', lic: 'CC BY 4.0', licUrl: 'https://creativecommons.org/licenses/by/4.0/', url: 'https://sketchfab.com/3d-Game/models/ford-mustang-roush-2019-stage-3-c3be292e50774be98bac9de749579d80' } },
     stats: { z100: 3.8, top: 285 }, name: 'Roush Mustang', cls: 'Stage 3 coupe · 2019', drive: 'rwd', blurb: 'Roush-tuned supercharged 5.0 litre V8 with 710 hp, a six-speed manual and rear-wheel drive. Loud, heavy and happiest sideways.',
     dims: { x0: -2.59, x1: 2.237, hw: 0.944, h: 1.351 }, paint: 0xf4c61a,
     traffic: { w: 0, v: [110, 140], acc: 3 },
@@ -2990,7 +2990,7 @@ const LIST = [
       steerLock: 0.6, maxSteer: 0.7, steerInRate: 5.2,
       upBase: 5700, upThr: 1300, dnBase: 2600, dnThr: 2700, shiftUpTime: 0.16, shiftDnTime: 0.1, vmax: 287,
       tire: { mu: [1.14, 1.14, 1.36, 1.36], Fz0: 4400, launch: 1.2 } } },
-  { id: 'z350', real: { glb: 'models/z350.glb.txt', credit: { by: 'Ddiaz Design', lic: 'CC BY-NC-SA 4.0', licUrl: 'https://creativecommons.org/licenses/by-nc-sa/4.0/', url: 'https://sketchfab.com/3d-models/nissan-350z-05e7604a0f4643ab87c141e244813e9a' } },
+  { id: 'z350', real: { glb: 'Game/models/z350.glb.txt', credit: { by: 'Ddiaz Design', lic: 'CC BY-NC-SA 4.0', licUrl: 'https://creativecommons.org/licenses/by-nc-sa/4.0/', url: 'https://sketchfab.com/3d-Game/models/nissan-350z-05e7604a0f4643ab87c141e244813e9a' } },
     stats: { z100: 5.5, top: 250 }, name: 'Nissan 350Z', cls: 'Sports coupe · 2003', drive: 'rwd', blurb: 'Naturally aspirated 3.5 litre V6 with a six-speed manual and a limited-slip rear axle. Short, balanced and a classic first drift car.',
     dims: { x0: -2.259, x1: 2.057, hw: 0.901, h: 1.301 }, paint: 0xb3b6b9,
     traffic: { w: 0, v: [110, 140], acc: 3 },
@@ -3002,7 +3002,7 @@ const LIST = [
       steerLock: 0.6, maxSteer: 0.7, steerInRate: 5.2,
       upBase: 5400, upThr: 1200, dnBase: 2400, dnThr: 2500, shiftUpTime: 0.14, shiftDnTime: 0.09, vmax: 252,
       tire: { mu: [1.08, 1.08, 1.2, 1.2], Fz0: 3700, launch: 1.14 } } },
-  { id: 'rs5', real: { glb: 'models/rs5.glb.txt', credit: { by: 'OUTPISTON', lic: 'CC BY-NC-SA 4.0', licUrl: 'https://creativecommons.org/licenses/by-nc-sa/4.0/', url: 'https://sketchfab.com/3d-models/2011-audi-rs5-coupe-9c6e602402a140c188bf5e467899fb8d' } },
+  { id: 'rs5', real: { glb: 'Game/models/rs5.glb.txt', credit: { by: 'OUTPISTON', lic: 'CC BY-NC-SA 4.0', licUrl: 'https://creativecommons.org/licenses/by-nc-sa/4.0/', url: 'https://sketchfab.com/3d-Game/models/2011-audi-rs5-coupe-9c6e602402a140c188bf5e467899fb8d' } },
     stats: { z100: 4.5, top: 250 }, name: 'Audi RS5', cls: 'Quattro coupe · 2011', drive: 'awd', blurb: 'Naturally aspirated 4.2 litre V8 that revs to 8,250 rpm, a seven-speed dual-clutch and quattro all-wheel drive with a rear bias. Planted, then playful.',
     dims: { x0: -2.607, x1: 2.013, hw: 0.954, h: 1.31 }, paint: 0xb3121c,
     traffic: { w: 0, v: [110, 140], acc: 3 },
@@ -3014,7 +3014,7 @@ const LIST = [
       steerLock: 0.6, maxSteer: 0.7, steerInRate: 5.2,
       upBase: 6700, upThr: 1500, dnBase: 3000, dnThr: 3100, shiftUpTime: 0.08, shiftDnTime: 0.06, vmax: 252,
       tire: { mu: [1.15, 1.15, 1.2, 1.2], Fz0: 4200 } } },
-  { id: 'gt4', real: { glb: 'models/gt4.glb.txt', credit: { by: 'Ddiaz Design', lic: 'CC BY-NC-SA 4.0', licUrl: 'https://creativecommons.org/licenses/by-nc-sa/4.0/', url: 'https://sketchfab.com/3d-models/2018-mercedes-amg-gt4-406f3e46c0114577b9bcdd57d2138e3f' } },
+  { id: 'gt4', real: { glb: 'Game/models/gt4.glb.txt', credit: { by: 'Ddiaz Design', lic: 'CC BY-NC-SA 4.0', licUrl: 'https://creativecommons.org/licenses/by-nc-sa/4.0/', url: 'https://sketchfab.com/3d-Game/models/2018-mercedes-amg-gt4-406f3e46c0114577b9bcdd57d2138e3f' } },
     stats: { z100: 3.6, top: 280 }, name: 'AMG GT4', cls: 'Mercedes-AMG race car · 2018', drive: 'rwd', blurb: 'The customer racing version of the AMG GT: twin-turbo 4.0 litre V8, a six-speed sequential gearbox and a big wing, driving the rear wheels. Raw and very grippy.',
     dims: { x0: -2.335, x1: 2.277, hw: 1.012, h: 1.239 }, paint: 0x6e7782,
     traffic: { w: 0, v: [110, 140], acc: 3 },
@@ -3026,7 +3026,7 @@ const LIST = [
       steerLock: 0.6, maxSteer: 0.7, steerInRate: 5.2,
       upBase: 5700, upThr: 1300, dnBase: 2600, dnThr: 2700, shiftUpTime: 0.07, shiftDnTime: 0.05, vmax: 282,
       tire: { mu: [1.34, 1.34, 1.46, 1.46], Fz0: 3400, launch: 1.06 } } },
-  { id: 'gt3rs', real: { glb: 'models/gt3rs.glb.txt', credit: { by: 'ChevroletSS', lic: 'CC BY 4.0', licUrl: 'https://creativecommons.org/licenses/by/4.0/', url: 'https://sketchfab.com/3d-models/porsche-911-gt3-78d5c47ab2554c2592b7e499179a0792' } },
+  { id: 'gt3rs', real: { glb: 'Game/models/gt3rs.glb.txt', credit: { by: 'ChevroletSS', lic: 'CC BY 4.0', licUrl: 'https://creativecommons.org/licenses/by/4.0/', url: 'https://sketchfab.com/3d-Game/models/porsche-911-gt3-78d5c47ab2554c2592b7e499179a0792' } },
     stats: { z100: 3.2, top: 312 }, name: 'Porsche 911 GT3 RS', cls: 'Track-day special · 991', drive: 'rwd', blurb: 'Rear-engined 4.0 litre flat-six with 520 PS that screams to 9,000 rpm, a seven-speed dual-clutch and a huge adjustable wing. The weight sits over the rear wheels, so it bites.',
     dims: { x0: -1.988, x1: 2.575, hw: 0.934, h: 1.266 }, paint: 0xe3e6e8,
     traffic: { w: 0, v: [110, 140], acc: 3 },
@@ -3038,7 +3038,7 @@ const LIST = [
       steerLock: 0.6, maxSteer: 0.7, steerInRate: 5.2,
       upBase: 7200, upThr: 1600, dnBase: 3300, dnThr: 3300, shiftUpTime: 0.06, shiftDnTime: 0.05, vmax: 314,
       tire: { mu: [1.36, 1.36, 1.5, 1.5], Fz0: 3600, launch: 1.6 } } },
-  { id: 'huracan', real: { glb: 'models/huracan.glb.txt', credit: { by: 'Ddiaz Design', lic: 'CC BY-NC-SA 4.0', licUrl: 'https://creativecommons.org/licenses/by-nc-sa/4.0/', url: 'https://sketchfab.com/3d-models/2015-mansory-huracan-torofeo-0436bb6d997b4e818407165198a32e35' } },
+  { id: 'huracan', real: { glb: 'Game/models/huracan.glb.txt', credit: { by: 'Ddiaz Design', lic: 'CC BY-NC-SA 4.0', licUrl: 'https://creativecommons.org/licenses/by-nc-sa/4.0/', url: 'https://sketchfab.com/3d-Game/models/2015-mansory-huracan-torofeo-0436bb6d997b4e818407165198a32e35' } },
     stats: { z100: 2.7, top: 340 }, name: 'Huracán Torofeo', cls: 'Mansory Lamborghini · 2015', drive: 'awd', blurb: 'The Mansory Torofeo: a Huracán with a 5.2 litre twin-turbo V10 pushed to 1,000 hp, a seven-speed dual-clutch and all-wheel drive. Mansory claims 2.7 s to 100 km/h and 340 km/h.',
     dims: { x0: -1.916, x1: 2.625, hw: 0.992, h: 1.139 }, paint: 0xe8edf0,
     traffic: { w: 0, v: [110, 140], acc: 3 },
@@ -3050,7 +3050,7 @@ const LIST = [
       steerLock: 0.6, maxSteer: 0.7, steerInRate: 5.2,
       upBase: 6900, upThr: 1500, dnBase: 3100, dnThr: 3200, shiftUpTime: 0.07, shiftDnTime: 0.05, vmax: 342,
       tcLiteSlip: 0.22, tire: { mu: [1.3, 1.3, 1.36, 1.36], Fz0: 3600 } } },
-  { id: 'laferrari', real: { glb: 'models/laferrari.glb.txt', credit: { by: 'Ddiaz Design', lic: 'CC BY-NC-SA 4.0', licUrl: 'https://creativecommons.org/licenses/by-nc-sa/4.0/', url: 'https://sketchfab.com/3d-models/2014-ferrari-laferrari-8b46fa49718647de846387ef4c1e95b3' } },
+  { id: 'laferrari', real: { glb: 'Game/models/laferrari.glb.txt', credit: { by: 'Ddiaz Design', lic: 'CC BY-NC-SA 4.0', licUrl: 'https://creativecommons.org/licenses/by-nc-sa/4.0/', url: 'https://sketchfab.com/3d-Game/models/2014-ferrari-laferrari-8b46fa49718647de846387ef4c1e95b3' } },
     stats: { z100: 2.9, top: 350 }, name: 'LaFerrari', cls: 'Ferrari hybrid hypercar · 2014', drive: 'rwd', blurb: 'A 6.3 litre V12 that revs to 9,250 rpm plus a hybrid boost for 963 PS, sent to the rear wheels through a seven-speed dual-clutch. Under three seconds to 100 and it never lets you relax.',
     dims: { x0: -1.953, x1: 2.762, hw: 0.986, h: 1.1 }, paint: 0xd2180f,
     traffic: { w: 0, v: [110, 140], acc: 3 },
@@ -3062,7 +3062,7 @@ const LIST = [
       steerLock: 0.6, maxSteer: 0.7, steerInRate: 5.2,
       upBase: 7300, upThr: 1600, dnBase: 3300, dnThr: 3400, shiftUpTime: 0.06, shiftDnTime: 0.05, vmax: 352,
       tcLiteSlip: 0.2, tire: { mu: [1.32, 1.32, 1.5, 1.5], Fz0: 3300, launch: 1.14 } } },
-  { id: 'roadster', real: { glb: 'models/roadster.glb.txt', credit: { by: 'metarex.4d', lic: 'CC BY 4.0', licUrl: 'https://creativecommons.org/licenses/by/4.0/', url: 'https://sketchfab.com/3d-models/tesla-roadster-2020-1fbf29e297bd4a17ac39a00a378441d8' } },
+  { id: 'roadster', real: { glb: 'Game/models/roadster.glb.txt', credit: { by: 'metarex.4d', lic: 'CC BY 4.0', licUrl: 'https://creativecommons.org/licenses/by/4.0/', url: 'https://sketchfab.com/3d-Game/models/tesla-roadster-2020-1fbf29e297bd4a17ac39a00a378441d8' } },
     stats: { z100: 2.6, top: 400 }, name: 'Tesla Roadster', cls: 'Electric hypercar · 2020', drive: 'awd', blurb: 'Three electric motors, all-wheel drive and a single gear. Tesla claims 1.9 s to 60 mph and over 250 mph; it has not published power or weight, so those figures here are estimates.',
     dims: { x0: -2.201, x1: 2.425, hw: 0.914, h: 1.175 }, paint: 0xf1f2f3,
     traffic: { w: 0, v: [110, 140], acc: 3 },
@@ -3074,7 +3074,7 @@ const LIST = [
       steerLock: 0.6, maxSteer: 0.7, steerInRate: 5.2,
       upBase: 12600, upThr: 2800, dnBase: 5700, dnThr: 5900, shiftUpTime: 0.1, shiftDnTime: 0.1, vmax: 402,
       tcLiteSlip: 0.2, tire: { mu: [1.26, 1.26, 1.32, 1.32], Fz0: 4800, launch: 1.6 } } },
-  { id: 'tourbillon', real: { glb: 'models/tourbillon.glb.txt', credit: { by: 'Ddiaz Design', lic: 'CC BY-NC-SA 4.0', licUrl: 'https://creativecommons.org/licenses/by-nc-sa/4.0/', url: 'https://sketchfab.com/3d-models/2026-bugatti-tourbillon-4f63f5a74611477989cefd9861b9784a' } },
+  { id: 'tourbillon', real: { glb: 'Game/models/tourbillon.glb.txt', credit: { by: 'Ddiaz Design', lic: 'CC BY-NC-SA 4.0', licUrl: 'https://creativecommons.org/licenses/by-nc-sa/4.0/', url: 'https://sketchfab.com/3d-Game/models/2026-bugatti-tourbillon-4f63f5a74611477989cefd9861b9784a' } },
     stats: { z100: 2.1, top: 445 }, name: 'Bugatti Tourbillon', cls: 'V16 hybrid hypercar · 2026', drive: 'awd', blurb: 'A 1,000 hp V16 that revs to 9,000 rpm and three electric motors, 1,800 PS in all, through an eight-speed dual-clutch and all-wheel drive. About two seconds to 100 and it keeps pulling to 445.',
     dims: { x0: -2.069, x1: 2.607, hw: 1.014, h: 1.171 }, paint: 0x9fc4d4,
     traffic: { w: 0, v: [110, 140], acc: 3 },
@@ -3086,7 +3086,7 @@ const LIST = [
       steerLock: 0.6, maxSteer: 0.7, steerInRate: 5.2,
       upBase: 7300, upThr: 1600, dnBase: 3300, dnThr: 3400, shiftUpTime: 0.06, shiftDnTime: 0.05, vmax: 447,
       tcLiteSlip: 0.2, tire: { mu: [1.3, 1.3, 1.36, 1.36], Fz0: 4900, launch: 1.6 } } },
-  { id: 'cruiser', police: true, real: { glb: 'models/cruiser.glb.txt', credit: { by: 'Mateusz Woliński', lic: 'CC BY 4.0', licUrl: 'https://creativecommons.org/licenses/by/4.0/', url: 'https://sketchfab.com/3d-models/police-car-9166b13b6ae341f4bfc093edb71d74f4' } },
+  { id: 'cruiser', police: true, real: { glb: 'Game/models/cruiser.glb.txt', credit: { by: 'Mateusz Woliński', lic: 'CC BY 4.0', licUrl: 'https://creativecommons.org/licenses/by/4.0/', url: 'https://sketchfab.com/3d-Game/models/police-car-9166b13b6ae341f4bfc093edb71d74f4' } },
     stats: { z100: 8.6, top: 200 }, name: 'Crown Vic Interceptor', cls: 'Ford police sedan · 2011', drive: 'rwd', blurb: 'The classic patrol car: a 4.6 litre V8 with 250 hp, a four-speed automatic and rear-wheel drive. Heavy, soft and tough, with a tail that steps out easily.',
     dims: { x0: -2.987, x1: 2.446, hw: 0.952, h: 1.603 }, paint: 0xf0f0f0,
     traffic: { w: 0, v: [110, 140], acc: 3 },
@@ -3098,7 +3098,7 @@ const LIST = [
       steerLock: 0.56, maxSteer: 0.66, steerInRate: 5.2,
       upBase: 4300, upThr: 1000, dnBase: 2000, dnThr: 2000, shiftUpTime: 0.22, shiftDnTime: 0.16, vmax: 202,
       tire: { mu: [1, 1, 1.02, 1.02], Fz0: 4700 } } },
-  { id: 'ford', police: true, real: { glb: 'models/ford.glb.txt', credit: { by: 'geyges', lic: 'Sketchfab Standard', licUrl: 'https://sketchfab.com/licenses', url: 'https://sketchfab.com/3d-models/ford-police-interceptor-utility-2020-2f67f7473f404bcea14643d089ac0cf6' } },
+  { id: 'ford', police: true, real: { glb: 'Game/models/ford.glb.txt', credit: { by: 'geyges', lic: 'Sketchfab Standard', licUrl: 'https://sketchfab.com/licenses', url: 'https://sketchfab.com/3d-Game/models/ford-police-interceptor-utility-2020-2f67f7473f404bcea14643d089ac0cf6' } },
     stats: { z100: 5.5, top: 220 }, name: 'Police Interceptor Utility', cls: 'Ford police SUV · 2020', drive: 'awd', blurb: 'The modern patrol SUV: a twin-turbo 3.0 litre V6 with 400 hp, a ten-speed automatic and all-wheel drive. Tall and heavy but quick, with grip to spare.',
     dims: { x0: -2.669, x1: 2.338, hw: 1.037, h: 1.752 }, paint: 0xf0f0f0,
     traffic: { w: 0, v: [110, 140], acc: 3 },
@@ -3110,7 +3110,7 @@ const LIST = [
       steerLock: 0.6, maxSteer: 0.7, steerInRate: 5.2,
       upBase: 4900, upThr: 1100, dnBase: 2200, dnThr: 2300, shiftUpTime: 0.14, shiftDnTime: 0.1, vmax: 222,
       tire: { mu: [1.04, 1.04, 1.02, 1.02], Fz0: 5300 } } },
-  { id: 'sesto', police: true, real: { glb: 'models/sesto.glb.txt', credit: { by: 'Ddiaz Design', lic: 'CC BY-NC-SA 4.0', licUrl: 'https://creativecommons.org/licenses/by-nc-sa/4.0/', url: 'https://sketchfab.com/3d-models/2010-lamborghini-sesto-elemento-scpd-police-9dfba5f127614688a0052250f0364f96' } },
+  { id: 'sesto', police: true, real: { glb: 'Game/models/sesto.glb.txt', credit: { by: 'Ddiaz Design', lic: 'CC BY-NC-SA 4.0', licUrl: 'https://creativecommons.org/licenses/by-nc-sa/4.0/', url: 'https://sketchfab.com/3d-Game/models/2010-lamborghini-sesto-elemento-scpd-police-9dfba5f127614688a0052250f0364f96' } },
     stats: { z100: 2.5, top: 355 }, name: 'Sesto Elemento SCPD', cls: 'Lamborghini police car · 2010', drive: 'awd', blurb: 'The carbon-fibre Lamborghini in police colours: a 5.2 litre V10 with 570 PS in a car that weighs a tonne, all-wheel drive and a robotised six-speed. Nothing on the highway can run from it.',
     dims: { x0: -1.808, x1: 2.544, hw: 0.957, h: 1.242 }, paint: 0xf0f0f0,
     traffic: { w: 0, v: [110, 140], acc: 3 },
@@ -3122,7 +3122,7 @@ const LIST = [
       steerLock: 0.6, maxSteer: 0.7, steerInRate: 5.2,
       upBase: 6700, upThr: 1500, dnBase: 3000, dnThr: 3100, shiftUpTime: 0.1, shiftDnTime: 0.08, vmax: 357,
       tcLiteSlip: 0.22, tire: { mu: [1.3, 1.3, 1.34, 1.34], Fz0: 2500, launch: 1.6 } } },
-  { id: 'civic', real: { glb: 'models/civic.glb.txt', credit: { by: 'Jumping Jax', lic: 'CC BY 4.0', licUrl: 'https://creativecommons.org/licenses/by/4.0/', url: 'https://sketchfab.com/3d-models/custom-honda-civic-type-r-2024-c36abddc783445fbb00f72356c576fca' } },
+  { id: 'civic', real: { glb: 'Game/models/civic.glb.txt', credit: { by: 'Jumping Jax', lic: 'CC BY 4.0', licUrl: 'https://creativecommons.org/licenses/by/4.0/', url: 'https://sketchfab.com/3d-Game/models/custom-honda-civic-type-r-2024-c36abddc783445fbb00f72356c576fca' } },
     stats: { z100: 5.4, top: 275 }, name: 'Honda Civic Type R', cls: 'FL5 hot hatchback · 2024', drive: 'fwd', blurb: 'Turbocharged 2.0 litre with 320 PS, a six-speed manual and a helical limited-slip differential on the front axle. Huge grip for a front-wheel-drive car, and a wing that is not just for show.',
     dims: { x0: -2.658, x1: 1.977, hw: 0.947, h: 1.401 }, paint: 0xff6a1a,
     traffic: { w: 0, v: [110, 140], acc: 3 },
@@ -3134,7 +3134,7 @@ const LIST = [
       steerLock: 0.6, maxSteer: 0.7, steerInRate: 5.2,
       upBase: 5700, upThr: 1300, dnBase: 2600, dnThr: 2700, shiftUpTime: 0.12, shiftDnTime: 0.08, vmax: 277,
       tire: { mu: [1.3, 1.3, 1.22, 1.22], Fz0: 3500, launch: 1.1 } } },
-  { id: 'gtr', real: { glb: 'models/gtr.glb.txt', credit: { by: 'Ddiaz Design', lic: 'CC BY-NC-SA 4.0', licUrl: 'https://creativecommons.org/licenses/by-nc-sa/4.0/', url: 'https://sketchfab.com/3d-models/2017-nissan-gt-r-nismo-71a34f4263ae43f59d4cd6b701899d20' } },
+  { id: 'gtr', real: { glb: 'Game/models/gtr.glb.txt', credit: { by: 'Ddiaz Design', lic: 'CC BY-NC-SA 4.0', licUrl: 'https://creativecommons.org/licenses/by-nc-sa/4.0/', url: 'https://sketchfab.com/3d-Game/models/2017-nissan-gt-r-nismo-71a34f4263ae43f59d4cd6b701899d20' } },
     stats: { z100: 2.9, top: 315 }, name: 'Nissan GT-R Nismo', cls: 'R35 supercar · 2017', drive: 'awd', blurb: 'Hand-built twin-turbo 3.8 litre V6 with 600 PS, a rear-mounted dual-clutch gearbox and the ATTESA all-wheel-drive system that sends most of the power to the back. Heavy, brutally quick and very hard to unstick.',
     dims: { x0: -2.488, x1: 2.223, hw: 0.943, h: 1.367 }, paint: 0xf1f2f3,
     traffic: { w: 0, v: [110, 140], acc: 3 },
@@ -3146,7 +3146,7 @@ const LIST = [
       steerLock: 0.6, maxSteer: 0.7, steerInRate: 5.2,
       upBase: 5700, upThr: 1300, dnBase: 2600, dnThr: 2700, shiftUpTime: 0.07, shiftDnTime: 0.05, vmax: 317,
       tire: { mu: [1.3, 1.3, 1.34, 1.34], Fz0: 4200, launch: 1.16 } } },
-  { id: 'zonda', real: { glb: 'models/zonda.glb.txt', credit: { by: 'Ddiaz Design', lic: 'CC BY-NC-SA 4.0', licUrl: 'https://creativecommons.org/licenses/by-nc-sa/4.0/', url: 'https://sketchfab.com/3d-models/2013-pagani-zonda-revolucion-1ca0266a0a8748a5a6e0cf5170988f15' } },
+  { id: 'zonda', real: { glb: 'Game/models/zonda.glb.txt', credit: { by: 'Ddiaz Design', lic: 'CC BY-NC-SA 4.0', licUrl: 'https://creativecommons.org/licenses/by-nc-sa/4.0/', url: 'https://sketchfab.com/3d-Game/models/2013-pagani-zonda-revolucion-1ca0266a0a8748a5a6e0cf5170988f15' } },
     stats: { z100: 2.6, top: 350 }, name: 'Pagani Zonda Revolución', cls: 'Track-only hypercar · 2013', drive: 'rwd', blurb: 'A 6.0 litre Mercedes-AMG V12 with 800 PS in a carbon-fibre body that weighs barely a tonne, with a sequential gearbox and enormous wings. Track-only, loud and wild.',
     dims: { x0: -2.139, x1: 2.625, hw: 0.989, h: 1.135 }, paint: 0x2a2d31,
     traffic: { w: 0, v: [110, 140], acc: 3 },
@@ -3158,7 +3158,7 @@ const LIST = [
       steerLock: 0.6, maxSteer: 0.7, steerInRate: 5.2,
       upBase: 6100, upThr: 1400, dnBase: 2800, dnThr: 2900, shiftUpTime: 0.06, shiftDnTime: 0.05, vmax: 352,
       tcLiteSlip: 0.2, tire: { mu: [1.42, 1.42, 1.5, 1.5], Fz0: 2600, launch: 1.24 } } },
-  { id: 'm5', real: { glb: 'models/m5.glb.txt', credit: { by: 'Ddiaz Design', lic: 'CC BY-NC-SA 4.0', licUrl: 'https://creativecommons.org/licenses/by-nc-sa/4.0/', url: 'https://sketchfab.com/3d-models/2021-bmw-m5-competition-29a4c13761cb40e6a050871bd40a0963' } },
+  { id: 'm5', real: { glb: 'Game/models/m5.glb.txt', credit: { by: 'Ddiaz Design', lic: 'CC BY-NC-SA 4.0', licUrl: 'https://creativecommons.org/licenses/by-nc-sa/4.0/', url: 'https://sketchfab.com/3d-Game/models/2021-bmw-m5-competition-29a4c13761cb40e6a050871bd40a0963' } },
     stats: { z100: 3.3, top: 305 }, name: 'BMW M5 Competition', cls: 'F90 super saloon · 2021', drive: 'awd', blurb: 'Twin-turbo 4.4 litre V8 with 625 PS, an eight-speed automatic and M xDrive all-wheel drive that sends most of the power to the rear. A four-door family car that does 0-100 in 3.3 seconds.',
     dims: { x0: -2.47, x1: 2.516, hw: 1.037, h: 1.508 }, paint: 0xc8102e,
     traffic: { w: 0, v: [110, 140], acc: 3 },
@@ -3170,7 +3170,7 @@ const LIST = [
       steerLock: 0.6, maxSteer: 0.7, steerInRate: 5.2,
       upBase: 5700, upThr: 1300, dnBase: 2600, dnThr: 2700, shiftUpTime: 0.1, shiftDnTime: 0.07, vmax: 307,
       tire: { mu: [1.22, 1.22, 1.28, 1.28], Fz0: 4800, launch: 1.12 } } },
-  { id: 'gt500', real: { glb: 'models/gt500.glb.txt', credit: { by: 'OUTPISTON', lic: 'CC BY-NC-SA 4.0', licUrl: 'https://creativecommons.org/licenses/by-nc-sa/4.0/', url: 'https://sketchfab.com/3d-models/1967-shelby-gt500-76b3235be395402bbcbae47615bc9c5a' } },
+  { id: 'gt500', real: { glb: 'Game/models/gt500.glb.txt', credit: { by: 'OUTPISTON', lic: 'CC BY-NC-SA 4.0', licUrl: 'https://creativecommons.org/licenses/by-nc-sa/4.0/', url: 'https://sketchfab.com/3d-Game/models/1967-shelby-gt500-76b3235be395402bbcbae47615bc9c5a' } },
     stats: { z100: 6.9, top: 195 }, name: 'Shelby GT500', cls: 'Ford muscle car · 1967', drive: 'rwd', blurb: 'Carroll Shelby\'s Mustang with a 7.0 litre 428 V8, 355 advertised horsepower, a four-speed manual and rear-wheel drive. Narrow tyres, soft springs and plenty of tail-out attitude.',
     dims: { x0: -2.564, x1: 2.255, hw: 0.874, h: 1.32 }, paint: 0x1c2a5e,
     traffic: { w: 0, v: [110, 140], acc: 3 },
@@ -3182,7 +3182,7 @@ const LIST = [
       steerLock: 0.56, maxSteer: 0.66, steerInRate: 5.2,
       upBase: 4600, upThr: 1000, dnBase: 2100, dnThr: 2100, shiftUpTime: 0.22, shiftDnTime: 0.15, vmax: 197,
       tire: { mu: [0.92, 0.92, 0.95, 0.95], Fz0: 3700, launch: 1.02 } } },
-  { id: 'snake', real: { glb: 'models/snake.glb.txt', credit: { by: 'Ddiaz Design', lic: 'CC BY-NC-SA 4.0', licUrl: 'https://creativecommons.org/licenses/by-nc-sa/4.0/', url: 'https://sketchfab.com/3d-models/2024-ford-shelby-super-snake-s650-4c9671e4510444e7a75d600e42d26c7e' } },
+  { id: 'snake', real: { glb: 'Game/models/snake.glb.txt', credit: { by: 'Ddiaz Design', lic: 'CC BY-NC-SA 4.0', licUrl: 'https://creativecommons.org/licenses/by-nc-sa/4.0/', url: 'https://sketchfab.com/3d-Game/models/2024-ford-shelby-super-snake-s650-4c9671e4510444e7a75d600e42d26c7e' } },
     stats: { z100: 3.4, top: 290 }, name: 'Shelby Super Snake', cls: 'Supercharged Mustang · 2024', drive: 'rwd', blurb: 'Shelby American\'s supercharged 5.0 litre Mustang with 830 hp, a six-speed manual and rear-wheel drive. Wide wheels, a big wing and far more power than the rear tyres can handle.',
     dims: { x0: -2.6, x1: 2.285, hw: 0.959, h: 1.332 }, paint: 0xdcdfe2,
     traffic: { w: 0, v: [110, 140], acc: 3 },
@@ -3194,7 +3194,7 @@ const LIST = [
       steerLock: 0.6, maxSteer: 0.7, steerInRate: 5.2,
       upBase: 5500, upThr: 1200, dnBase: 2500, dnThr: 2600, shiftUpTime: 0.16, shiftDnTime: 0.1, vmax: 292,
       tire: { mu: [1.16, 1.16, 1.32, 1.32], Fz0: 4400, launch: 1.44 } } },
-  { id: 'model3', real: { glb: 'models/model3.glb.txt', credit: { by: 'dannzjs', lic: 'CC BY 4.0', licUrl: 'https://creativecommons.org/licenses/by/4.0/', url: 'https://sketchfab.com/3d-models/tesla-model-3-5af35a4772f240039a6e58c58998555b' } },
+  { id: 'model3', real: { glb: 'Game/models/model3.glb.txt', credit: { by: 'dannzjs', lic: 'CC BY 4.0', licUrl: 'https://creativecommons.org/licenses/by/4.0/', url: 'https://sketchfab.com/3d-Game/models/tesla-model-3-5af35a4772f240039a6e58c58998555b' } },
     stats: { z100: 3.7, top: 261 }, name: 'Tesla Model 3 Performance', cls: 'Electric saloon · 2021', drive: 'awd', blurb: 'Two electric motors, all-wheel drive and one gear. Instant torque and a low battery floor make it quick and stable; Tesla does not publish power, so that figure is an estimate.',
     dims: { x0: -2.403, x1: 2.316, hw: 0.972, h: 1.381 }, paint: 0xf2f3f4,
     traffic: { w: 0, v: [110, 140], acc: 3 },
@@ -3206,7 +3206,7 @@ const LIST = [
       steerLock: 0.6, maxSteer: 0.7, steerInRate: 5.2,
       upBase: 13400, upThr: 3000, dnBase: 6100, dnThr: 6300, shiftUpTime: 0.1, shiftDnTime: 0.1, vmax: 263,
       tcLiteSlip: 0.2, tire: { mu: [1.22, 1.22, 1.26, 1.26], Fz0: 4500, launch: 1.6 } } },
-  { id: 'm3t', real: { glb: 'models/m3t.glb.txt', credit: { by: 'Ddiaz Design', lic: 'CC BY-NC-SA 4.0', licUrl: 'https://creativecommons.org/licenses/by-nc-sa/4.0/', url: 'https://sketchfab.com/3d-models/2023-bmw-m3-touring-f540fdbc0d93435d96ef354f01720dc0' } },
+  { id: 'm3t', real: { glb: 'Game/models/m3t.glb.txt', credit: { by: 'Ddiaz Design', lic: 'CC BY-NC-SA 4.0', licUrl: 'https://creativecommons.org/licenses/by-nc-sa/4.0/', url: 'https://sketchfab.com/3d-Game/models/2023-bmw-m3-touring-f540fdbc0d93435d96ef354f01720dc0' } },
     stats: { z100: 3.6, top: 250 }, name: 'BMW M3 Touring', cls: 'G81 estate · 2023', drive: 'awd', blurb: 'Twin-turbo straight-six with 510 PS, an eight-speed automatic and M xDrive all-wheel drive with a rear bias, in a practical estate body. The family wagon that drifts.',
     dims: { x0: -2.558, x1: 2.234, hw: 0.94, h: 1.439 }, paint: 0xe9ebed,
     traffic: { w: 0, v: [110, 140], acc: 3 },
@@ -3218,7 +3218,7 @@ const LIST = [
       steerLock: 0.6, maxSteer: 0.7, steerInRate: 5.2,
       upBase: 5900, upThr: 1300, dnBase: 2700, dnThr: 2700, shiftUpTime: 0.1, shiftDnTime: 0.07, vmax: 252,
       tire: { mu: [1.24, 1.24, 1.3, 1.3], Fz0: 4600, launch: 1.1 } } },
-  { id: 'm2', real: { glb: 'models/m2.glb.txt', credit: { by: 'Ddiaz Design', lic: 'CC BY-NC-SA 4.0', licUrl: 'https://creativecommons.org/licenses/by-nc-sa/4.0/', url: 'https://sketchfab.com/3d-models/2023-bmw-m2-m-performance-parts-g87-bb8b3a1f0abb46e0a5b460f1f6ffd9b4' } },
+  { id: 'm2', real: { glb: 'Game/models/m2.glb.txt', credit: { by: 'Ddiaz Design', lic: 'CC BY-NC-SA 4.0', licUrl: 'https://creativecommons.org/licenses/by-nc-sa/4.0/', url: 'https://sketchfab.com/3d-Game/models/2023-bmw-m2-m-performance-parts-g87-bb8b3a1f0abb46e0a5b460f1f6ffd9b4' } },
     stats: { z100: 4.3, top: 250 }, name: 'BMW M2', cls: 'G87 coupe · 2023', drive: 'rwd', blurb: 'Twin-turbo straight-six with 460 PS, a six-speed manual and an active rear differential, in the shortest, most playful car BMW M builds. This one wears M Performance parts.',
     dims: { x0: -2.351, x1: 2.224, hw: 0.941, h: 1.396 }, paint: 0xd8201a,
     traffic: { w: 0, v: [110, 140], acc: 3 },
@@ -3230,7 +3230,7 @@ const LIST = [
       steerLock: 0.6, maxSteer: 0.7, steerInRate: 5.2,
       upBase: 5900, upThr: 1300, dnBase: 2700, dnThr: 2700, shiftUpTime: 0.15, shiftDnTime: 0.1, vmax: 252,
       tire: { mu: [1.25, 1.25, 1.3, 1.3], Fz0: 4200, launch: 1.16 } } },
-  { id: 'raptor', real: { glb: 'models/raptor.glb.txt', credit: { by: 'Ddiaz Design', lic: 'CC BY-NC-SA 4.0', licUrl: 'https://creativecommons.org/licenses/by-nc-sa/4.0/', url: 'https://sketchfab.com/3d-models/2017-ford-f-150-raptor-2be278ef4dc94d9fa00fae8b33da8273' } },
+  { id: 'raptor', real: { glb: 'Game/models/raptor.glb.txt', credit: { by: 'Ddiaz Design', lic: 'CC BY-NC-SA 4.0', licUrl: 'https://creativecommons.org/licenses/by-nc-sa/4.0/', url: 'https://sketchfab.com/3d-Game/models/2017-ford-f-150-raptor-2be278ef4dc94d9fa00fae8b33da8273' } },
     stats: { z100: 5.5, top: 170 }, name: 'Ford F-150 Raptor', cls: 'Off-road pickup · 2017', drive: 'awd', blurb: 'Twin-turbo 3.5 litre V6 with 450 hp, a ten-speed automatic, four-wheel drive and long-travel suspension on 35-inch tyres. Tall and heavy, but it slides on anything.',
     dims: { x0: -3.131, x1: 2.431, hw: 1.168, h: 1.943 }, paint: 0x1a63c9,
     traffic: { w: 0, v: [110, 140], acc: 3 },
@@ -3242,7 +3242,7 @@ const LIST = [
       steerLock: 0.6, maxSteer: 0.7, steerInRate: 5.2,
       upBase: 4700, upThr: 1000, dnBase: 2100, dnThr: 2200, shiftUpTime: 0.18, shiftDnTime: 0.12, vmax: 172,
       tire: { mu: [0.96, 0.96, 0.96, 0.96], Fz0: 6100 } } },
-  { id: 'trx', real: { glb: 'models/trx.glb.txt', credit: { by: 'Outlaw Games™', lic: 'CC BY-NC 4.0', licUrl: 'https://creativecommons.org/licenses/by-nc/4.0/', url: 'https://sketchfab.com/3d-models/2021-ram-1500-trx-4fad9badee2449b9a5addadc11c3f4e1' } },
+  { id: 'trx', real: { glb: 'Game/models/trx.glb.txt', credit: { by: 'Outlaw Games™', lic: 'CC BY-NC 4.0', licUrl: 'https://creativecommons.org/licenses/by-nc/4.0/', url: 'https://sketchfab.com/3d-Game/models/2021-ram-1500-trx-4fad9badee2449b9a5addadc11c3f4e1' } },
     stats: { z100: 4.5, top: 190 }, name: 'Ram 1500 TRX', cls: 'Supercharged pickup · 2021', drive: 'awd', blurb: 'A supercharged 6.2 litre Hellcat V8 with 702 hp, an eight-speed automatic and four-wheel drive under a full-size pickup body. The quickest truck there is, and nothing about it is subtle.',
     dims: { x0: -3.299, x1: 2.615, hw: 1.127, h: 2.011 }, paint: 0x3a3d41,
     traffic: { w: 0, v: [110, 140], acc: 3 },
@@ -6365,7 +6365,7 @@ return { start, update, setHold, impact, blip, setHorn, setSiren, setMuted, setV
 })();
 
 /* ---- traffic.js ---- */
-/* Highway traffic. The cars are the 38 textured vehicles in models/npc.glb.txt (cars, pickups, vans, trucks, buses, a semi); the road stays empty until that file has arrived
+/* Highway traffic. The cars are the 38 textured vehicles in Game/models/npc.glb.txt (cars, pickups, vans, trucks, buses, a semi); the road stays empty until that file has arrived
    (it is asked for again if the first try fails). They keep their lanes, hold a safe gap (IDM car-following),
    signal and change lanes when it pays and it is safe (MOBIL), keep right unless overtaking, brake for you, wobble and
    recover from a bump, and spin out from a real hit. Drawn as instanced meshes: a handful of draw calls for all of them.
@@ -6417,10 +6417,10 @@ const REPAINT = [
   '#endif'].join('\n');
 const TRAILER = [[0.95, 0.95, 0.94], [0.8, 0.82, 0.84], [0.14, 0.3, 0.6], [0.7, 0.12, 0.1], [0.92, 0.75, 0.2], [0.2, 0.45, 0.25]];
 
-/* ---- the traffic vehicles: models/npc.glb.txt is one file with a node "npc_<id>" per vehicle (one textured mesh in metres, x forward, y up, standing on the road, centred). The node's extras
+/* ---- the traffic vehicles: Game/models/npc.glb.txt is one file with a node "npc_<id>" per vehicle (one textured mesh in metres, x forward, y up, standing on the road, centred). The node's extras
    hold its name, class, mass, speed range, weight in the traffic mix, size and where its lamps are ([x, y, z, width, height, facing] quads). The file is fetched and built once and shared by
    every Traffic. Until it is ready there is no traffic. ---- */
-const NPC = { url: 'models/npc.glb.txt', state: 'idle', list: [], byId: Object.create(null), promise: null, credit: null, waiters: [] };
+const NPC = { url: 'Game/models/npc.glb.txt', state: 'idle', list: [], byId: Object.create(null), promise: null, credit: null, waiters: [] };
 const NPC_BASE = 1000;                                                   // in a server's traffic feed the traffic vehicles are numbered from here
 function npcLoad() {
   if (NPC.promise) return NPC.promise;
@@ -8713,7 +8713,7 @@ const raw = Object.create(null), pending = Object.create(null), done = Object.cr
 let copies = 0;
 const MAPS = ['map', 'normalMap', 'roughnessMap', 'metalnessMap', 'emissiveMap', 'aoMap', 'alphaMap'];
 
-/* The page host only serves text, image, font and media files, so each model ships as its .glb bytes written in base64 (models/<id>.glb.txt).
+/* The page host only serves text, image, font and media files, so each model ships as its .glb bytes written in base64 (Game/models/<id>.glb.txt).
    A plain .glb url still works (served from a normal web server). */
 function b64bytes(s) {
   const bin = atob(s), n = bin.length, u = new Uint8Array(n);                         // atob skips line breaks and spaces
