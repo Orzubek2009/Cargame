@@ -70,9 +70,9 @@ window.DD_GAME = {
      To make every car cheaper or dearer at once use money.priceScale instead (see above). The three police versions at the bottom are not linked to
      their road cars: if you change a road car's price, change its police version too. Delete a line and the car goes back to its built-in price. */
   prices: {
-    cruiser:     8900,     // Ford Crown Victoria Police Interceptor 2011 (ex-police)
-    prius:       9900,     // Toyota Prius 2012
+    prius:       0,     // Toyota Prius 2012
     malibu:      12900,    // Chevrolet Malibu 2.0T Premier 2016
+    cruiser:     13600,     // Ford Crown Victoria Police Interceptor 2011 (ex-police)
     z350:        13900,    // Nissan 350Z 2003
     ford:        19900,    // Ford Police Interceptor Utility 2020 (ex-police)
     rs5:         27900,    // Audi RS5 2011
@@ -104,7 +104,7 @@ window.DD_GAME = {
     // the three police Interceptors (every part maxed)
     mustangpd:   142600,   // Mustang Pursuit: the Roush Mustang as a police car, every part maxed (about twice the road car)
     gt3pd:       377100,   // 911 GT3 RS Interceptor: the GT3 RS as a police car, every part maxed (about twice the road car)
-    roadsterpd:  410000,   // Roadster Interceptor: the Tesla Roadster as a police car, every part maxed
+    roadsterpd:  410000   // Roadster Interceptor: the Tesla Roadster as a police car, every part maxed
   },
 
   /* Handling aids for every car: the starting values of Settings > Aids (a player who moves a slider there keeps their own number). Change a number, save, upload this file.
@@ -114,8 +114,8 @@ window.DD_GAME = {
        counterSteer     strength of the steering assist's automatic counter-steer.                      0 = none, 1 = standard, 1.5 = strong
      For one car only: cars: { tune: { m4: { brakeStab: 1.5, spinProtection: 0.5 } } } multiplies these two for that car. */
   handling: {
-    brakeStab: 1,
-    spinProtection: 1,
+    brakeStab: 0,
+    spinProtection: 0,
     absSlip: 0.12,
     counterSteer: 1,
   },
